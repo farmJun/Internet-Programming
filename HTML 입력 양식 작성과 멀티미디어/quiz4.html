@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        p {
+            background-color: lightgreen;
+            width: 200px;
+            height: 50px;
+        }
+        #target1 {
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+            overflow: scroll;
+
+        }
+        #target2 {
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+
+        }
+        #target3 {
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+            overflow: auto;
+
+        }
+
+        .text {
+            min-width: 100px;
+            min-height: 100px;
+            background-color: yellow;
+        }
+    </style>
+
+
+</head>
+<body>
+scroll
+<div id=target1>
+    <p>block #1</p>
+    <p>block #2</p>
+    <p>block #3</p>
+    <p>block #4</p>
+    <p>block #5</p>
+</div>
+
+<dl/>
+
+hidden
+<div id=target2>
+    <p>block #1</p>
+    <p>block #2</p>
+    <p>block #3</p>
+    <p>block #4</p>
+    <p>block #5</p>
+</div>
+
+<dl/>
+
+auto
+<div id=target3>
+    <p>block #1</p>
+    <p>block #2</p>
+    <p>block #3</p>
+    <p>block #4</p>
+    <p>block #5</p>
+</div>
+
+<dl/>
+
+<div class="text">
+    이 요소는 min-width:100px;와 min-height:100px;으로 설정되었습니다.
+    요소의 크기는 width와 height 속성으로 결정된다.
+    만약 개발자가 요소의 width와 height를 명확하게 설정하지 않으면 브라우저가
+    요소 안의 콘텐츠의 크기를 계산하여서 요소의 크기를 결정한다.
+</div>
+
+</body>
+</html>

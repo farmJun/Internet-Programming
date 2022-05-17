@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz5</title>
+
+    <style>
+        #box1{
+            position:absolute;
+            top:0px; left: 0px;
+            width: 200px; height: 100px;
+            background: yellow;
+            z-index: 200;
+        }
+        #box2{
+            position:absolute;
+            top:30px; left: 30px;
+            width: 200px; height: 100px;
+            background: red;
+            z-index: 100;
+        }
+        #box3{
+            position:absolute;
+            top:60px; left: 60px;
+            width: 200px; height: 100px;
+            background: green;
+            z-index: 0;
+        }
+        img{
+            position: absolute;
+            left:300px;
+            top:200px;
+            z-index: -1;
+        }
+        p{
+            position: absolute;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">box #1</div>
+    <div id="box2">box #2</div>
+    <div id="box3">box #3</div>
+
+    <p>img요소가 -1 글자 요소의 뒤에 위치한다.
+	box width 200 height 100.</p>
+    <img src="img/pome.jpg" width="200" height="200"/>
+</body>
+</html>
