@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Quiz1</title>
+    </head>
+    <body>
+        <h1>메뉴와 수량을 선택하세요</h1>
+        
+            메뉴:
+            <select id="menu">
+                <option value="짜장면">짜장면</option>
+                <option value="짬뽕">짬뽕</option>
+                <option value="햄버거">햄버거</option>
+            </select>
+     
+            <br>
+       
+            수량:
+            <input id="num" type="number" min="1" max="10" step="1">
+     
+        
+        <p>
+            <input type="button" value="주문완료" onclick="fun()">
+        </p>
+
+        <p id="here"></p>
+
+        <script>
+            function fun(){
+              let a=document.getElementById("menu");
+              let food=a.options[a.selectedIndex].text;
+                console.log(food);
+            
+                let b=document.getElementById("num");
+               let foodNum=b.value;
+            
+               document.getElementById("here").innerHTML=food +" "+foodNum+"개 주문하였습니다." 
+            }
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM 객체 동적 삽입</title>
+    </head>
+    <body>
+        <form>
+            <h1>정답의 동적 삽입</h1>
+            <hr>
+            <p>Q. 거울아 거울아 세상에서 누가 제일 예쁘니?</p>
+            <p><button type="button" onclick="fun1()">답보기</button></p>
+            <p id="msg1"></p>
+            <p>Q. 죽느냐 사느냐 어떤 것이 문제인가?</p>
+            <p><button type="button" onclick="fun2()">답보기</button></p>
+            <p id="msg2"></p>
+        </form>
+        <script>
+            function fun1(){
+                let msg="백설공주";
+                const message=document.getElementById("msg1");
+                message.innerText=msg;
+            }
+            function fun2(){
+                let msg="둘다";
+                const message=document.getElementById("msg2");
+                message.innerText=msg;
+            }
+
+        </script>
+
+    </body>
+</html>

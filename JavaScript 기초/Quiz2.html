@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            document.write("<h2> 난수 10개 생성 </h2>");
+            document.write("<hr>");
+            var arr = new Array(10);
+
+            for(i=0; i<10; i++) {
+                var temp = Math.floor(Math.random()*100+1);
+                arr.push(temp);
+                document.write(temp+" ");
+            }
+            document.write("<hr>");
+            arr.sort(function(a,b) {return a-b});
+            document.write("제일 큰 수는 "+arr[9]);
+            document.write("<hr>");
+           
+
+            for(i=0;i<10;i++) 
+                document.write(arr[i] + " ");
+            
+            document.wrtie("<hr>");
+            document.write("제일 큰 수는 "+arr[9]);
+        </script>
+    </body>
+</html>

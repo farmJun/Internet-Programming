@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function order() {
+            var menu=document.getElementById("menu");
+            var a= "";
+            console.log(menu.length);
+            console.log(menu[0].value);
+          
+
+            for(i=0;i<menu.length;i++) {
+            
+                if(menu[i].checked) {
+                    if(i!=0&&a!="") 
+        
+                        a+=", ";
+                        a+=menu[i].value;
+                        console.log(a);
+                }
+
+            }
+
+            a+="을 주문하였습니다.";
+            document.getElementById("message").innerHTML=a;
+        }
+    </script>
+    <form id="menu">
+        <h1>메뉴를 선택하세요</h1>
+        <input type = "checkbox" value="짜장면">짜장면 <br>
+        <input type = "checkbox"  value="짬뽕">짬뽕 <br>
+        <input type = "checkbox"  value="햄버거">햄버거 <br>
+        <button type = "button" onclick="order()">주문완료</button> <br> <br>
+        <p id="message" value=""></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        document.write("<h2> book 객체 배열 만들기 </h2>");
+        document.write("<hr>");
+        var bookArray= new Array(5);
+        for (var i =0;i<bookArray.length;i++) {
+            var book = new Object;
+
+            bookArray[i] =prompt("콤마(,)로 분리하면서 책제목 저자 가격 순으로 입력");
+
+            part = bookArray[i].split(",");
+
+            book.title= part[0];
+            book.author = part[1];
+            book.price=part[2];
+
+            bookArray[i] = book;
+
+            document.write(bookArray[i].title+", "+bookArray[i].author + ", "+bookArray[i].price+"<br>");
+
+        }
+    </script>
+
+</body>
+</html>
