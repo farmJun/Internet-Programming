@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2guess.html</title>
+</head>
+
+<body>
+    <script>
+        var solution = Math.floor(Math.random()*101);
+        
+        function test() {
+                 
+                    var x = document.getElementById("number").value;
+              
+                    if(x==solution) {
+                        document.getElementById("tries").value++;
+                        document.getElementById("hint").value = "성공.";
+                    }
+                    else if(x>solution) {
+                        document.getElementById("tries").value++;
+                        document.getElementById("hint").value = "너무 큼.";
+                    }
+                    else if(x<solution) {
+                        document.getElementById("tries").value++;
+                        document.getElementById("hint").value = "너무 작음.";
+                    }   
+        }
+
+    </script>
+
+<h1>숫자 맞추기 게임</h1>
+<p>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다.</p>
+숫자 : <input id="number" type="text"> 
+        <button type= "button" onclick ="test()">확인</button><br><br>
+추측횟수 : <input readonly id = "tries" value = "0"> 힌트 : <input readonly id = "hint">
+
+</body>
+</html>

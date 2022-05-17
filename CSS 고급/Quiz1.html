@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>1time.html</title>
+</head>
+
+<body>
+
+<h3>오전이면 lightskyblue, 오후이면 orange 배경</h3>
+<hr>
+<div id= "clock"></div>
+<script>
+    function time() {
+        const now = new Date();
+
+        if(now.getHours() <12 ) {
+            document.body.style.backgroundColor='lightskyblue'
+        }
+        else{
+            document.body.style.backgroundColor='orange'
+        }
+        const s = "Current Time : " + now.getHours()+"시 " + now.getMinutes() + "분 " + now.getSeconds()
+        + "초";
+
+        const a = document.getElementById("clock");
+        a.innerText=s;
+        setTimeout('time()', 1000);
+    }
+    time(); 
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>덧셈 계산 게임</title>
+</head>
+
+<body>
+    <h3>덧셈 계산 하시고, 결과를 입력하고 확인 버튼을 클릭하여 정확한지 확인해보세요.</h3>
+    <hr>
+    <div id="a"> </div>
+    
+    <br>
+    덧셈 결과 : <input id="number" type="text"> 
+                <button type= "button" onclick ="test()">결과 확인</button>
+    
+
+    <script>
+       var num1 =Math.floor(Math.random()*101);
+       var num2= Math.floor(Math.random()*101);
+
+       const a =document.getElementById("a");
+
+       const name1= num1+" + "+ num2 + " = ";
+       a.innerHTML=name1;
+    
+       
+        function test() {
+                var x = document.getElementById("number").value;
+                if(x== num1+num2) {alert( "맞았습니다.");}
+                else {alert("틀렸습니다.");}
+        }
+    </script>
+
+
+</body>
+</html>

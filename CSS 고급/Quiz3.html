@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4adder.html</title>
+</head>
+
+<body>
+    <script>
+        function cal() {
+                var x = document.getElementById("num1").value;
+                var y = document.getElementById("num2").value;
+                document.getElementById("sum").value = parseInt(x)+parseInt(y);
+        }
+    </script>
+
+<h3>덧셈 계산기</h3>
+
+첫번째 정수: <input id="num1" type="text"> 
+<br>
+두번째 정수: <input id="num2" type="text"> 
+<br>
+합계: <input readonly id= "sum">
+<button type= "button" onclick ="cal()">계산</button>
+
+</body>
+</html>
