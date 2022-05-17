@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>4주차 퀴즈3</title>
+</head>
+
+<body>
+<script>
+    var a = prompt("100 이하의 정수만 입력: ");
+    a = parseInt(a);
+
+    if(a > 100) {
+        alert("정수 " + a + "은 100보다 작지 않습니다.");
+    }
+    else if(a >= 1 && a <=100) {
+        var sum = 0;
+       
+        for(var i = 1; i <= a; i++) {
+            sum = sum + i;
+        }
+        alert(sum);
+    }
+    else {
+        alert("제대로 입력해주세요.");
+    }
+</script>
+
+</body>
+</html>
