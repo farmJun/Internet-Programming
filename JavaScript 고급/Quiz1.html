@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>선택된 물품 계산하기</title>
+    </head>
+    <body>
+        <h1>물품을 선택하면 금액이 자동 계산됩니다</h1>
+        <hr>
+        <input type="checkbox" value="10000" onclick="fun(this)">모자 1만원
+        <input type="checkbox" value="30000" onclick="fun(this)">구두 3만원
+        <input type="checkbox" value="80000" onclick="fun(this)">명품가방 8만원
+        <br>
+        지불하실 금액 <input id="total" type="text" readonly value="0">
+
+        <script>
+            let sum=0;
+
+            function fun(item){
+                if(item.checked==true){
+                    sum += parseInt(item.value)
+                }
+                else{
+                    sum -= parseInt(item.value)
+                }
+                document.getElementById("total").value=sum;
+            }
+        </script>
+    </body>
+</html>

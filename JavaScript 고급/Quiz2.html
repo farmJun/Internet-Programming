@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>계산해봅시다</title>
+    </head>
+    <body>
+        <h1>계산해봅시다</h1>
+        <hr>
+        2 + 4 = <span id="a" onclick="fun1()"> 답 </span>
+        <br>
+        4 + * 20 + 64 = <span id="b"  onclick="fun2()"> 답 </span>
+        <br>
+        20/5-8*2 = <span id="c" onclick="fun3()"> 답 </span>
+        <br>
+
+        <script>
+            function fun1(){
+                document.getElementById("a").innerHTML="6";
+            }
+            function fun2(){
+                document.getElementById("b").innerHTML="144";
+            }
+            function fun3(){
+                document.getElementById("c").innerHTML="-12";
+            }
+        </script>
+    </body>
+</html>
