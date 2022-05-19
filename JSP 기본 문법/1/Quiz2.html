@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{
+                font-size:40px;
+                color:white;
+                padding: 0px;
+                margin:0px;
+            }
+            body{
+                background: url("snow.jpg");
+                background-repeat: no-repeat;
+            }
+        </style>
+        <script>
+            const SNOW=30;
+            const snow=new Array(SNOW);
+            const x= new Array(SNOW);
+            const y= new Array(SNOW);
+            const fallSpeed= new Array(SNOW);
+            const windSpeed= new Array(SNOW);
+            const step= new Array(SNOW);
+
+            function fall(){
+                for(let i=0;i<SNOW;i++){
+                    y[i]+=fallSpeed[i];
+                    x[i]+=Math.cos(windSpeed[i]);
+                    if(y[i]>=window.innerHeight-60){
+                        y[i]=0;
+                        x[i]=Math.floor(Math.random()*window.innerWidth);
+                        fallSpeed[i]=Math.random()*2+2;
+                    }
+
+                    if(x[i]>=window.innerWidth-50){
+                    x[i]=window.innerWidth-50;
+                    }
+                    else if(x[i]<0){
+                    x[i]=50;}
+                    snow[i].style.top=y[i]+"px";
+                    snow[i].style.left=x[i]+"px";
+
+                    windSpeed[i]+=step[i];
+                }
+                setTimeout("fall()",50);
+            }
+
+            
+
+            function makeSnow(){
+                for(let i=0;i<SNOW;i++){
+                    let divtag="<div style='position: relative;' class ='snow' id=snowobj"+i+">*</div>";
+                    document.write(divtag);
+
+                    snow[i]=document.getElementById("snowobj"+i)
+                }
+            }
+
+            function snowP(){
+                for(let i=0;i<SNOW;i++){
+                    x[i]=Math.floor(Math.random()*window.innerWidth-10);
+                    y[i]=Math.floor(Math.random()*window.innerHeight+10);
+                    fallSpeed[i]=Math.random()*2+2;
+                    windSpeed[i]=1;
+                    step[i]=Math.random()*0.1+0.05;
+
+                    snow[i].style.top=y[i]+"px";
+                    snow[i].style.left=x[i]+"px";
+                }
+
+            }
+
+            makeSnow();
+
+            window.onload=function(){
+                snowP();
+                fall();
+            }
+        </script>
+    </head>
+    <body>
+     qweqwe
+    </body>
+</html>

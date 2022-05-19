@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <h1>div 태그에 시계 만들기</h1>
+        시계를 클릭하면 시계가 멈추고 다시 클릭하면 가기 시작한다.<hr>
+
+        <input type="text" id="clock" onclick="stop(this)" readonly>
+ 
+    
+
+        </ol>
+
+        <script>
+         
+
+            var text ="";
+            let cl;
+            function setclock() {
+                var but = document.getElementById("clock");
+                var now = new Date();
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+                if(hour>12) {
+                    text = "오후 " + (hour-12) + ":" + minute+ ":" + second;
+                }
+                else if(hour==12){
+                    text = "오후 " + hour + ":" + minute+ ":" + second;
+                }
+                else if(hour==24){
+                    text = "오전 " + (hour-24) + ":" + minute+ ":" + second;
+                }
+                
+                else {
+                    text = "오전 " + hour + ":" + minute+ ":" + second;
+                }
+                but.value = text;
+                cl = setTimeout("setclock()",1000);
+            }
+            setclock();
+
+            var go = true;
+            function stop(self) {
+                if(go == true) {
+                    clearTimeout(cl);
+                    self.style.backgroundColor = "lightgray";
+                    go =false;
+                }
+                else if(go ==false) {
+                    self.style.backgroundColor = "white";
+                    setclock();
+                    go =true;
+                }
+                
+            }
+
+        </script>
+    </body>
+</html>
