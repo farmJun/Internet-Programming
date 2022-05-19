@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>마우스 드래깅으로 캔버스에 그림 그리기</title>
+        </head>
+        <body onload="start()">
+                <h3>마우스를 누른 채 드래깅하여 그림 그려 보세요</h3>
+                <hr>
+                <canvas id="canvas" style="background-color:aliceblue" width="500" height="500">
+                </canvas>
+                <script>
+
+                let canvas, a;
+                
+                function start() {
+                    canvas = document.getElementById("canvas");
+                    a = canvas.getContext("2d");
+                
+                    a.lineWidth = 1; 
+                    a.strokeStyle = "blue";
+                
+                
+                    canvas.addEventListener("mousemove", function (e) { move(e) }, false);
+                    canvas.addEventListener("mousedown", function (e) { down(e) }, false);
+                    canvas.addEventListener("mouseup", function (e) { up(e) }, false);
+                    canvas.addEventListener("mouseout", function (e) { out(e) }, false);
+                }
+                
+                var startX=0, startY=0; 
+                var drawing=false;
+
+                function up(e) { 
+                    drawing = false; 
+                }
+                function down(e) {
+                    startX = e.offsetX; startY = e.offsetY;
+                    drawing = true;
+                }
+                function draw(curX, curY) {
+                    a.beginPath();
+                    a.moveTo(startX, startY);
+                    a.lineTo(curX, curY);
+                    a.stroke();
+                }
+                function move(e) {
+                    if(!drawing) return; 
+                    var curX = e.offsetX, curY = e.offsetY;
+                    draw(curX, curY);
+                    startX = curX; startY = curY;
+                }
+                function out(e) { drawing = false; }
+              </script>
+         </body>
+    </html>
